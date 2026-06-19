@@ -1,3 +1,5 @@
+AGRINHO 2026 — Projeto Premium (index.html)
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -9,10 +11,256 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- 外部CSS（关键修复点） -->
-  <link rel="stylesheet" href="style.css">
-</head>
+  <style>
 
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#f5f7f2;
+      color:#1f2937;
+      line-height:1.6;
+    }
+
+    header{
+      height:100vh;
+      background:
+      linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+      url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=1400&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      color:white;
+      padding:20px;
+    }
+
+    header h1{
+      font-size:4rem;
+      max-width:900px;
+      margin-bottom:20px;
+      animation:fadeUp 1s ease;
+    }
+
+    header p{
+      font-size:1.3rem;
+      max-width:700px;
+      margin-bottom:35px;
+      animation:fadeUp 1.3s ease;
+    }
+
+    .btn{
+      background:#4CAF50;
+      color:white;
+      padding:15px 35px;
+      border:none;
+      border-radius:50px;
+      text-decoration:none;
+      font-weight:600;
+      transition:0.3s;
+      box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .btn:hover{
+      transform:translateY(-3px);
+      background:#43a047;
+    }
+
+    nav{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:#ffffffee;
+      backdrop-filter:blur(10px);
+      display:flex;
+      justify-content:center;
+      padding:18px;
+      box-shadow:0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    nav a{
+      margin:0 20px;
+      text-decoration:none;
+      color:#1f2937;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:#4CAF50;
+    }
+
+    section{
+      padding:90px 10%;
+    }
+
+    .title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .title h2{
+      font-size:2.5rem;
+      color:#2e7d32;
+      margin-bottom:15px;
+    }
+
+    .title p{
+      color:#6b7280;
+      max-width:700px;
+      margin:auto;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:white;
+      border-radius:25px;
+      overflow:hidden;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+      transition:0.4s;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+    }
+
+    .card img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+    }
+
+    .card-content{
+      padding:25px;
+    }
+
+    .card-content h3{
+      margin-bottom:15px;
+      color:#2e7d32;
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:25px;
+      margin-top:50px;
+    }
+
+    .stat-box{
+      background:#2e7d32;
+      color:white;
+      padding:40px;
+      border-radius:20px;
+      text-align:center;
+      box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .stat-box h3{
+      font-size:3rem;
+      margin-bottom:10px;
+    }
+
+    .future{
+      background:linear-gradient(135deg,#2e7d32,#66bb6a);
+      color:white;
+      border-radius:30px;
+      padding:70px;
+      text-align:center;
+    }
+
+    .future h2{
+      font-size:3rem;
+      margin-bottom:25px;
+    }
+
+    .future p{
+      max-width:850px;
+      margin:auto;
+      margin-bottom:35px;
+    }
+
+    form{
+      max-width:700px;
+      margin:auto;
+      background:white;
+      padding:40px;
+      border-radius:25px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    input, textarea{
+      width:100%;
+      padding:15px;
+      margin-top:10px;
+      margin-bottom:25px;
+      border:1px solid #d1d5db;
+      border-radius:12px;
+      font-size:1rem;
+    }
+
+    footer{
+      background:#1b4332;
+      color:white;
+      text-align:center;
+      padding:40px 20px;
+      margin-top:80px;
+    }
+
+    footer p{
+      opacity:0.8;
+    }
+
+    @keyframes fadeUp{
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @media(max-width:768px){
+
+      header h1{
+        font-size:2.5rem;
+      }
+
+      nav{
+        flex-wrap:wrap;
+      }
+
+      nav a{
+        margin:10px;
+      }
+
+      .future{
+        padding:40px 25px;
+      }
+
+      .future h2{
+        font-size:2rem;
+      }
+
+    }
+
+  </style>
+</head>
 <body>
 
   <header>
@@ -34,72 +282,208 @@
   </nav>
 
   <section id="producao">
+
     <div class="title">
       <h2>Produção Agrícola</h2>
-      <p>O agronegócio é um dos pilares da economia brasileira.</p>
+      <p>
+        O agronegócio é um dos pilares da economia brasileira, impulsionando empregos, exportações e inovação tecnológica.
+      </p>
     </div>
 
     <div class="cards">
+
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6">
+        <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop">
+
         <div class="card-content">
           <h3>Agricultura Moderna</h3>
-          <p>Máquinas inteligentes aumentam a produtividade.</p>
+          <p>
+            Máquinas inteligentes aumentam a produtividade e reduzem desperdícios no campo.
+          </p>
         </div>
       </div>
 
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231">
+        <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=1200&auto=format&fit=crop">
+
         <div class="card-content">
           <h3>Energia Renovável</h3>
-          <p>Energia solar reduz custos e impactos ambientais.</p>
+          <p>
+            A energia solar ajuda fazendas a reduzirem custos e impactos ambientais.
+          </p>
         </div>
       </div>
 
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop">
+
         <div class="card-content">
           <h3>Preservação Ambiental</h3>
-          <p>Produzir preservando é essencial.</p>
+          <p>
+            Produzir preservando florestas e recursos naturais é essencial para o futuro.
+          </p>
         </div>
       </div>
+
     </div>
+
+    <div class="stats">
+
+      <div class="stat-box">
+        <h3>27%</h3>
+        <p>Participação do agronegócio no PIB brasileiro.</p>
+      </div>
+
+      <div class="stat-box">
+        <h3>+1M</h3>
+        <p>Empregos gerados pelo setor agrícola.</p>
+      </div>
+
+      <div class="stat-box">
+        <h3>100%</h3>
+        <p>Compromisso com inovação sustentável.</p>
+      </div>
+
+    </div>
+
   </section>
 
   <section id="sustentabilidade">
+
     <div class="title">
       <h2>Sustentabilidade no Campo</h2>
-      <p>Uso consciente da água e tecnologia no campo.</p>
+
+      <p>
+        O uso consciente da água, energias limpas e agricultura regenerativa garantem equilíbrio entre produção e natureza.
+      </p>
     </div>
+
+    <div class="cards">
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="card-content">
+          <h3>Irrigação Inteligente</h3>
+          <p>
+            Sensores e sistemas automatizados reduzem desperdício de água.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1523741543316-beb7fc7023d8?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="card-content">
+          <h3>Drones Agrícolas</h3>
+          <p>
+            Monitoramento das lavouras em tempo real para maior eficiência.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1473773508845-188df298d2d1?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="card-content">
+          <h3>Solo Sustentável</h3>
+          <p>
+            Técnicas ecológicas ajudam a preservar nutrientes e evitar erosões.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
   </section>
 
   <section id="desafios">
+
     <div class="title">
       <h2>Desafios Ambientais</h2>
-      <p>O crescimento precisa ser sustentável.</p>
+
+      <p>
+        O crescimento agrícola precisa acontecer com responsabilidade ambiental e preservação dos recursos naturais.
+      </p>
     </div>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="card-content">
+          <h3>Desmatamento</h3>
+          <p>
+            A expansão sem planejamento ameaça ecossistemas e biodiversidade.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content">
+          <h3>Uso Excessivo da Água</h3>
+          <p>
+            O desperdício compromete rios, reservatórios e o abastecimento futuro.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content">
+          <h3>Emissão de Carbono</h3>
+          <p>
+            Máquinas e queimadas aumentam os gases do efeito estufa.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
   </section>
 
   <section id="futuro">
-    <div class="title">
+
+    <div class="future">
       <h2>O Futuro do Agronegócio</h2>
-      <p>Mais tecnologia e sustentabilidade.</p>
+
+      <p>
+        A tecnologia será fundamental para transformar o campo em um ambiente mais produtivo, inteligente e sustentável para as próximas gerações.
+      </p>
+
+      <a href="#contato" class="btn">Participar do Projeto</a>
     </div>
+
   </section>
 
   <section id="contato">
+
     <div class="title">
       <h2>Contato</h2>
-      <p>Envie sua opinião.</p>
+      <p>
+        Envie sua opinião sobre sustentabilidade e inovação no agronegócio.
+      </p>
     </div>
+
+    <form>
+      <label>Nome</label>
+      <input type="text" placeholder="Digite seu nome">
+
+      <label>Email</label>
+      <input type="email" placeholder="Digite seu email">
+
+      <label>Mensagem</label>
+      <textarea rows="6" placeholder="Digite sua mensagem"></textarea>
+
+      <button class="btn" type="submit">Enviar Mensagem</button>
+    </form>
+
   </section>
 
   <footer>
-    <p>AGRINHO 2026 - Projeto educativo</p>
+    <h3>AGRINHO 2026</h3>
+    <p>
+      Projeto educativo sobre sustentabilidade no agronegócio.
+    </p>
   </footer>
-
-
-  <script src="script.js"></script>
 
 </body>
 </html>
