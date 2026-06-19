@@ -1,46 +1,35 @@
 /* AGRINHO 2026 - SCRIPT.JS (VERSÃO FINAL) */
+document.addEventListener("DOMContentLoaded", () => {
 
-/* Destacar menu ao clicar */
-let links = document.querySelectorAll("nav a");
+  const cards = document.querySelectorAll(".card");
 
-links.forEach(function(link) {
-    link.addEventListener("click", function(event) {
-        event.preventDefault();
-
-        // remove destaque de todos
-        links.forEach(l => {
-            l.style.background = "";
-            l.style.color = "white";
-        });
-
-        // adiciona destaque no clicado
-        link.style.background = "#66bb6a";
-        link.style.color = "white";
-        link.style.borderRadius = "10px";
-        link.style.padding = "5px 10px";
+  cards.forEach(card => {
+    card.addEventListener("mouseenter", () => {
+      card.style.transition = "0.4s";
     });
-});
+  });
 
-/* Efeito de scroll no cabeçalho */
-window.addEventListener("scroll", function () {
-    let header = document.querySelector("header");
+  const form = document.querySelector("form");
 
-    if (window.scrollY > 50) {
-        header.style.opacity = "0.9";
-    } else {
-        header.style.opacity = "1";
-    }
-});
+  if(form){
 
-/* Interação nas seções */
-let sections = document.querySelectorAll("section");
+    form.addEventListener("submit", (e) => {
 
-sections.forEach(function(sec) {
-    sec.addEventListener("click", function () {
-        if (sec.style.background === "rgb(232, 245, 233)") {
-            sec.style.background = "white";
-        } else {
-            sec.style.background = "#e8f5e9";
-        }
+      e.preventDefault();
+
+      const nome = form.querySelector('input[type="text"]').value;
+
+      if(nome.trim() === ""){
+        alert("Por favor, digite seu nome.");
+        return;
+      }
+
+      alert("Mensagem enviada com sucesso!");
+
+      form.reset();
+
     });
+
+  }
+
 });
